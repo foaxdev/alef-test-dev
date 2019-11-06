@@ -1,0 +1,85 @@
+.bg-primary {
+  background-color: #7D00FF !important; }
+
+.navbar {
+  height: 100px;
+  padding: 20px 25px 20px 40px; }
+
+.navbar-brand {
+  font-size: 32px; }
+
+.nav-link {
+  font-size: 24px;
+  color: #7D00FF;
+  background-color: #FFFFFF;
+  border-radius: 5px; }
+  .nav-link:hover, .nav-link:focus {
+    color: #7000E0; }
+
+.dropdown-item {
+  color: #7D00FF; }
+
+.row {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.col-3,
+.col {
+  height: calc(100vh - 200px);
+  overflow-y: scroll; }
+
+.col {
+  margin: 0 10px; }
+  .col .col-wrap {
+    padding: 15px; }
+
+.col-wrap {
+  width: 100%;
+  background-color: #E6E6E6; }
+
+.btn-light {
+  font-size: 24px;
+  color: #7D00FF !important; }
+
+.btn-outline-light {
+  font-size: 24px;
+  color: #FFFFFF !important; }
+
+.table td {
+  position: relative;
+  padding: 20px 20px 20px 90px;
+  font-size: 20px;
+  color: #7D00FF;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
+  .table td::before {
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 20px;
+    width: 48px;
+    height: 48px;
+    background-color: #7D00FF;
+    border-radius: 50%; }
+
+.long-text {
+  font-size: 16px;
+  color: #7D00FF; }
+
+.body {
+  background-color: #7000E0; }
+
+.buttons {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto; }
+  .buttons li {
+    margin-right: 20px; }
+    .buttons li:last-child {
+      margin-right: 0; }

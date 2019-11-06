@@ -1,0 +1,94 @@
+.bg-primary {
+  background-color: $violet !important;
+}
+
+.navbar {
+  height: 100px;
+  padding: 20px 25px 20px 40px;
+}
+
+.navbar-brand {
+  font-size: 32px;
+}
+
+.nav-link {
+  font-size: 24px;
+  color: $violet;
+
+  background-color: $white;
+  border-radius: 5px;
+
+  &:hover,
+  &:focus {
+    color: $dark-violet;
+  }
+}
+
+.dropdown-item {
+  color: $violet;
+}
+
+.row {
+  justify-content: space-between;
+}
+
+.col-3,
+.col {
+  height: calc(100vh - 200px);
+
+  overflow-y: scroll;
+}
+
+.col {
+  margin: 0 10px;
+
+  & .col-wrap {
+    padding: 15px;
+  }
+}
+
+.col-wrap {
+  width: 100%;
+
+  background-color: $light-grey;
+}
+
+.btn-light {
+  font-size: 24px;
+  color: $violet !important;
+}
+
+.btn-outline-light {
+  font-size: 24px;
+  color: $white !important;
+}
+
+.table td {
+  position: relative;
+
+  padding: 20px 20px 20px 90px;
+
+  font-size: 20px;
+  color: $violet;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 20px;
+
+    width: 48px;
+    height: 48px;
+
+    background-color: $violet;
+    border-radius: 50%;
+  }
+}
+
+.long-text {
+  font-size: 16px;
+  color: $violet;
+}

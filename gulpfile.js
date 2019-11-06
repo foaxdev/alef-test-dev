@@ -46,7 +46,8 @@ gulp.task("server", function () {
 gulp.task("copy", function() {
   return gulp.src([
     "source/js/*.js",
-    "source/css/*.css"
+    "source/css/*.css",
+    "source/*.html"
   ], {
     base: "source"
   })
