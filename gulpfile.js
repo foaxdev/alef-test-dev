@@ -10,10 +10,10 @@ let autoprefixer = require("autoprefixer");
 let csso = require("gulp-csso");
 let server = require("browser-sync").create();
 let del = require("del");
-let pug = require('gulp-pug');
-let htmlmin = require('gulp-htmlmin');
+let pug = require("gulp-pug");
+let htmlmin = require("gulp-htmlmin");
 
-gulp.task("css", function () {
+gulp.task("css", () => {
   return gulp.src("source/sass/style.scss")
     .pipe(plumber())
     .pipe(sourcemap.init())
@@ -31,14 +31,14 @@ gulp.task("css", function () {
     .pipe(server.stream());
 });
 
-gulp.task('html', function () {
-  return gulp.src('source/*.pug')
+gulp.task("html", () => {
+  return gulp.src("source/*.pug")
     .pipe(pug())
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest("build"))
 });
 
-gulp.task("server", function () {
+gulp.task("server", () => {
   server.init({
     server: "build/",
     notify: false,
@@ -49,24 +49,23 @@ gulp.task("server", function () {
 
   gulp.watch("source/sass/**/*.scss", gulp.series("css"));
   gulp.watch("source/js/*.js", gulp.series("copy", "refresh"));
-  gulp.watch('source/**/*.pug', gulp.series('html', 'refresh'));
+  gulp.watch("source/**/*.pug", gulp.series("html", "refresh"));
   gulp.watch(("source/*.html"), gulp.series("copy", "refresh"));
 });
 
-gulp.task("copy", function() {
+gulp.task("copy", () => {
   return gulp.src([
     "source/js/*.js",
     "source/css/*.css",
-    "source/*.html"
+    "source/*.html",
+    "source/webfonts/**"
   ], {
     base: "source"
   })
     .pipe(gulp.dest("build"));
 });
 
-gulp.task("clean", function () {
-  return del("build");
-});
+gulp.task("clean", () => del("build"));
 
 gulp.task("build", gulp.series(
   "clean",
@@ -75,7 +74,7 @@ gulp.task("build", gulp.series(
   "css"
 ));
 
-gulp.task("refresh", function (done) {
+gulp.task("refresh", done => {
   server.reload();
   done();
 });

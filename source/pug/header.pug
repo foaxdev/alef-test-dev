@@ -1,6 +1,8 @@
 mixin header()
   header.container
     nav.navbar.navbar-dark.bg-primary
+      a.btn.btn-outline-light.toggle(data-toggle='collapse', href='#collapseExample', role='button', aria-expanded='false', aria-controls='collapseExample')
+        i.fas.fa-bars
       a.navbar-brand(href='#') Company logo
       div.nav-item.dropdow
         a.nav-link.dropdown-toggle(data-toggle='dropdown', href='#', role='button', aria-haspopup='true', aria-expanded='false') Options

@@ -1,5 +1,39 @@
+header.container,
+footer.container {
+  position: relative;
+  z-index: 2;
+}
+
 .bg-primary {
   background-color: $violet !important;
+}
+
+.btn {
+  cursor: pointer;
+
+  &.toggle {
+    width: 50px;
+    margin-right: 190px;
+  }
+}
+
+.btn-light {
+  font-size: 24px;
+  color: $violet !important;
+}
+
+.btn-outline-light {
+  font-size: 24px;
+  color: $white !important;
+
+  &:hover,
+  &:focus:not(.toggle) {
+    color: $violet !important;
+  }
+}
+
+.btn-text {
+  margin-left: 15px;
 }
 
 .navbar {
@@ -8,6 +42,8 @@
 }
 
 .navbar-brand {
+  margin-right: auto;
+
   font-size: 32px;
 }
 
@@ -39,6 +75,37 @@
   overflow-y: scroll;
 }
 
+.col-3.collapse {
+  position: relative;
+  z-index: 1;
+
+  box-shadow: 9px 0 14px 5px rgba(0, 0, 0, 0.43);
+
+  & .col-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    max-width: 240px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    background-color: $dark-violet;
+  }
+
+  & a {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+    color: $white;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .col {
   margin: 0 10px;
 
@@ -53,20 +120,15 @@
   background-color: $light-grey;
 }
 
-.btn-light {
-  font-size: 24px;
-  color: $violet !important;
+.table {
+  margin-bottom: 0;
 }
 
-.btn-outline-light {
-  font-size: 24px;
-  color: $white !important;
-}
-
-.table td {
+.table.small td {
   position: relative;
 
   padding: 20px 20px 20px 90px;
+  max-width: 200px;
 
   font-size: 20px;
   color: $violet;
@@ -88,7 +150,28 @@
   }
 }
 
+.table.big {
+  & tr:nth-child(odd) {
+    background-color: $grey;
+  }
+
+  & td {
+    border-bottom-width: 4px;
+  }
+}
+
 .long-text {
   font-size: 16px;
-  color: $violet;
+}
+
+.copyright {
+  font-size: 18px;
+  color: $white;
+}
+
+footer.container {
+  max-width: 1110px;
+  padding: 0;
+
+  box-shadow: 1px -2px 14px 1px rgba(0, 0, 0, 0.43);
 }
