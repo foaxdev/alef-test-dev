@@ -1,7 +1,7 @@
 header.container,
 footer.container {
   position: relative;
-  z-index: 2; }
+  z-index: 4; }
 
 .bg-primary {
   background-color: #7D00FF !important; }
@@ -61,7 +61,7 @@ footer.container {
 
 .col-3.menu {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   -webkit-transition: max-width 1s ease;
   transition: max-width 1s ease;
   max-width: 0;
@@ -175,7 +175,30 @@ footer.container {
   .col-3.menu {
     position: absolute;
     top: 0;
-    left: 0; } }
+    left: 0; }
+  .col-3.wide {
+    display: none; }
+  .col {
+    margin-right: 0; }
+  .btn.toggle {
+    margin-right: 90px; }
+  .navbar-brand {
+    font-size: 26px; }
+  .table.small td,
+  .text {
+    padding: 20px 20px 20px 60px; }
+    .table.small td::before,
+    .text::before {
+      top: 15px;
+      left: 15px;
+      width: 38px;
+      height: 38px; } }
+
+@media (max-width: 768px) {
+  .col-3 {
+    display: none; }
+  .col {
+    margin: 0; } }
 
 .body {
   background-color: #7000E0; }
