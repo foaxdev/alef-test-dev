@@ -51,17 +51,23 @@ footer.container {
 
 .col-3,
 .col {
-  height: calc(100vh - 200px);
-  overflow-y: scroll; }
+  height: calc(100vh - 200px); }
+  .col-3.wide,
+  .col.wide {
+    overflow-y: scroll; }
+  .col-3.thin,
+  .col.thin {
+    overflow-y: scroll; }
 
 .col-3.menu {
   position: relative;
   z-index: 1;
   -webkit-transition: max-width 1s ease;
   transition: max-width 1s ease;
-  max-width: 0; }
+  max-width: 0;
+  overflow-y: scroll; }
   .col-3.menu.in {
-    max-width: 270px;
+    max-width: 290px;
     -webkit-box-shadow: 9px 0 14px 5px rgba(0, 0, 0, 0.43);
             box-shadow: 9px 0 14px 5px rgba(0, 0, 0, 0.43); }
   .col-3.menu .col-wrap {
@@ -73,19 +79,20 @@ footer.container {
         -ms-flex-direction: column;
             flex-direction: column;
     padding: 40px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
     background-color: #7000E0; }
   .col-3.menu a {
     margin-bottom: 10px;
     font-size: 18px;
-    color: #FFFFFF; }
+    color: #FFFFFF;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; }
     .col-3.menu a:last-child {
       margin-bottom: 0; }
 
 .col {
-  margin: 0 10px; }
+  margin: 0 10px;
+  overflow-y: scroll; }
   .col .col-wrap {
     padding: 15px; }
 
@@ -93,8 +100,12 @@ footer.container {
   width: 100%;
   background-color: #E6E6E6; }
 
+.row {
+  position: relative; }
+
 .table {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  overflow-y: scroll; }
 
 .table.small td {
   position: relative;
@@ -106,6 +117,32 @@ footer.container {
   white-space: nowrap;
   overflow: hidden; }
   .table.small td::before {
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 20px;
+    width: 48px;
+    height: 48px;
+    background-color: #7D00FF;
+    border-radius: 50%; }
+
+.text {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  padding: 20px 20px 20px 90px;
+  min-width: 100%;
+  max-width: 200px;
+  font-size: 20px;
+  color: #7D00FF;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #E6E6E6; }
+  .text::before {
     position: absolute;
     content: "";
     top: 10px;
@@ -133,6 +170,12 @@ footer.container {
   padding: 0;
   -webkit-box-shadow: 1px -2px 14px 1px rgba(0, 0, 0, 0.43);
           box-shadow: 1px -2px 14px 1px rgba(0, 0, 0, 0.43); }
+
+@media (max-width: 1024px) {
+  .col-3.menu {
+    position: absolute;
+    top: 0;
+    left: 0; } }
 
 .body {
   background-color: #7000E0; }

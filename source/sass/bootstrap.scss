@@ -72,7 +72,13 @@ footer.container {
 .col {
   height: calc(100vh - 200px);
 
-  overflow-y: scroll;
+  &.wide {
+    overflow-y: scroll;
+  }
+
+  &.thin {
+    overflow-y: scroll;
+  }
 }
 
 .col-3.menu {
@@ -82,9 +88,10 @@ footer.container {
   transition: max-width 1s ease;
 
   max-width: 0;
+  overflow-y: scroll;
 
   &.in {
-    max-width: 270px;
+    max-width: 290px;
     box-shadow: 9px 0 14px 5px rgba(0, 0, 0, 0.43);
   }
 
@@ -92,10 +99,6 @@ footer.container {
     display: flex;
     flex-direction: column;
     padding: 40px;
-
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
 
     background-color: $dark-violet;
   }
@@ -106,6 +109,10 @@ footer.container {
     font-size: 18px;
     color: $white;
 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -114,6 +121,7 @@ footer.container {
 
 .col {
   margin: 0 10px;
+  overflow-y: scroll;
 
   & .col-wrap {
     padding: 15px;
@@ -126,14 +134,55 @@ footer.container {
   background-color: $light-grey;
 }
 
-.table {
-  margin-bottom: 0;
+.row {
+  position: relative;
 }
 
-.table.small td {
-  position: relative;
+.table {
+  margin-bottom: 0;
 
+  overflow-y: scroll;
+}
+
+.table.small {
+
+  & td {
+    position: relative;
+
+    padding: 20px 20px 20px 90px;
+    max-width: 200px;
+
+    font-size: 20px;
+    color: $violet;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 10px;
+      left: 20px;
+
+      width: 48px;
+      height: 48px;
+
+      background-color: $violet;
+      border-radius: 50%;
+    }
+  }
+}
+
+.text {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  display: block;
   padding: 20px 20px 20px 90px;
+  min-width: 100%;
   max-width: 200px;
 
   font-size: 20px;
@@ -141,6 +190,8 @@ footer.container {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+
+  background-color: $light-grey;
 
   &::before {
     position: absolute;
@@ -180,4 +231,12 @@ footer.container {
   padding: 0;
 
   box-shadow: 1px -2px 14px 1px rgba(0, 0, 0, 0.43);
+}
+
+@media (max-width: $tablet-width) {
+  .col-3.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
