@@ -75,17 +75,23 @@ footer.container {
   overflow-y: scroll;
 }
 
-.col-3.collapse {
+.col-3.menu {
   position: relative;
   z-index: 1;
 
-  box-shadow: 9px 0 14px 5px rgba(0, 0, 0, 0.43);
+  transition: max-width 1s ease;
+
+  max-width: 0;
+
+  &.in {
+    max-width: 270px;
+    box-shadow: 9px 0 14px 5px rgba(0, 0, 0, 0.43);
+  }
 
   & .col-wrap {
     display: flex;
     flex-direction: column;
     padding: 40px;
-    max-width: 240px;
 
     text-overflow: ellipsis;
     white-space: nowrap;

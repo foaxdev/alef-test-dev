@@ -54,12 +54,17 @@ footer.container {
   height: calc(100vh - 200px);
   overflow-y: scroll; }
 
-.col-3.collapse {
+.col-3.menu {
   position: relative;
   z-index: 1;
-  -webkit-box-shadow: 9px 0 14px 5px rgba(0, 0, 0, 0.43);
-          box-shadow: 9px 0 14px 5px rgba(0, 0, 0, 0.43); }
-  .col-3.collapse .col-wrap {
+  -webkit-transition: max-width 1s ease;
+  transition: max-width 1s ease;
+  max-width: 0; }
+  .col-3.menu.in {
+    max-width: 270px;
+    -webkit-box-shadow: 9px 0 14px 5px rgba(0, 0, 0, 0.43);
+            box-shadow: 9px 0 14px 5px rgba(0, 0, 0, 0.43); }
+  .col-3.menu .col-wrap {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -68,16 +73,15 @@ footer.container {
         -ms-flex-direction: column;
             flex-direction: column;
     padding: 40px;
-    max-width: 240px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     background-color: #7000E0; }
-  .col-3.collapse a {
+  .col-3.menu a {
     margin-bottom: 10px;
     font-size: 18px;
     color: #FFFFFF; }
-    .col-3.collapse a:last-child {
+    .col-3.menu a:last-child {
       margin-bottom: 0; }
 
 .col {
